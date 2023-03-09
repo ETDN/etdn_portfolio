@@ -1,18 +1,22 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import "./index.css";
 import "./fonts/ARAME-REGULAR.TTF";
+import Home from "./Components/Home";
+import Nav from "./Components/Navbar";
 
 function App() {
   return (
-    <div className="background">
-      <h2>Hi, I'am</h2>
-      <h1>Emilie Teodoro Do Nascimento</h1>
-      <h2>Front-End / Software Development & UI Enthusiast</h2>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/navbar" element={<Nav />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
-
-ReactDOM.render(<App />, document.getElementById("root"));
 
 export default App;
